@@ -64,7 +64,7 @@ class UsersController extends Controller
 
         //Auth::login($user);
         $this->sendEmailConfirmationTo($user);
-        session()->flash('success', '欢迎，您将在这里开启一段新的旅程~');
+        session()->flash('success', '欢迎，您将在这里开启一段新的旅程~,请先前往邮箱进行激活。');
         return redirect()->route('users.show', [$user]);
     }
 
@@ -104,8 +104,8 @@ class UsersController extends Controller
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'aufree@estgroupe.com';
-        $name = 'Aufree';
+        $from = 'yang-19950427@163.com';
+        $name = 'Lam';
         $to = $user->email;
         $subject = '感谢注册Sample应用！请确认您的邮箱。';
 
